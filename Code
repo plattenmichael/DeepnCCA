@@ -1,3 +1,4 @@
+# Here you have to designate which folder you have downloaded DataLoader and load_model_and_predict to.
 from data_handling.dataloader import DataLoader
 from train_and_test.load_model_and_predict import Predictor
 
@@ -10,7 +11,7 @@ dl_b = DataLoader(data_path_b, im_size=(256, 256))
 dl_c = DataLoader(data_path_cc, im_size=(256, 256))
 
 
-#This is the model predictor.
+#This calls the model predictor.
 
 prd = Predictor(dl_c, image_path='/path_to_images_to_be_segmented/*.jpeg')
 prd.load_and_predict_both_models(model_paths=['/path_to_the_saved_model_corpus_callosum/model/',
