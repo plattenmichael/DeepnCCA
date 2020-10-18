@@ -131,8 +131,8 @@ class Predictor:
 
             predicted_imgs.append(model_predictions)
 
-        #result_df = pd.DataFrame(columns=['File', 'Fraction'])
-        result_df = pd.DataFrame(columns=['File', 'Fraction', 'CC', 'Brain'])
+        result_df = pd.DataFrame(columns=['File', 'Fraction'])
+        
 
         print(f'Saving files and writing results...')
         file = open(self.image_path[:-6] + 'results.txt', 'w')
@@ -147,10 +147,10 @@ class Predictor:
 
             # Get fraction and write to results.txt
             frac = float(np.count_nonzero(cc)) / float(np.count_nonzero(brain))
-            #file.write(self.image_path[:-6] + name + '_seg: ' + str(frac) + '\n')
-            file.write(self.image_path[:-6] + name + '_seg: ' + str(frac) + '\n' + str(float(np.count_nonzero(cc))) + str(float(np.count_nonzero(brain))))
-            #result_df.loc[len(result_df)] = [name, frac]
-            result_df.loc[len(result_df)] = [name, frac, cc, brain]
+            file.write(self.image_path[:-6] + name + '_seg: ' + str(frac) + '\n')
+            
+            result_df.loc[len(result_df)] = [name, frac]
+            
 
         result_df.to_csv(self.image_path[:-6] + 'results.csv')
         file.close()
