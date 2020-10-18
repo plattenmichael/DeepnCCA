@@ -1,1 +1,20 @@
-The code will be uploaded as soon as the manuscript is published.
+from data_handling.dataloader import DataLoader
+from models.UnetPlusPlus import UnetPlusPlus
+from models.Unet import Unet
+from train_and_test.training import Trainer
+from train_and_test.load_model_and_predict import Predictor
+
+# TODO: Fix padding for images that are not x = y
+# TODO: Implement a continue-train function to resume training on an existing model
+
+#Dataloader was also used in the training of the algorithm, and thus had several functions. For predicting with the model, the below pathways are not being called. You can simply use the pathway to where your images are.
+data_path_b = '/path_to_images_to_be_segmented/*.jpeg'
+data_path_cc = '/path_to_images_to_be_segmented/*.jpeg'
+
+dl_b = DataLoader(data_path_b, im_size=(256, 256))
+dl_c = DataLoader(data_path_cc, im_size=(256, 256))
+
+
+prd = Predictor(dl_c, image_path='/path_to_images_to_be_segmented/*.jpeg')
+prd.load_and_predict_both_models(model_paths=['/path_to_the_saved_model_corpus_callosum/model/',
+                                '/path_to_the_saved_model_brain/model/'])
