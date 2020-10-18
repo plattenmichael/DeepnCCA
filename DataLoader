@@ -114,43 +114,7 @@ class DataLoader():
 
         return image_names, dataset
 
-if __name__ == '__main__':
-    image_path = '../data/jpeg_images/both_labels/*.jpeg'
 
-    dl = DataLoader(image_path=image_path, batch_size=10)
-
-    train_ds, test_ds = dl.load_as_dataset()
-
-    train_iterator = train_ds.make_initializable_iterator()
-    train_batch = train_iterator.get_next()
-
-    test_iterator = test_ds.make_initializable_iterator()
-    test_batch = test_iterator.get_next()
-
-    print(dl.num_test_images)
-    print(dl.num_train_images)
-
-    with tf.Session() as sess:
-        sess.run(tf.global_variables_initializer())
-        sess.run(tf.local_variables_initializer())
-
-        sess.run(train_iterator.initializer)
-
-        x, y = sess.run(train_batch)
-        for img, lbl in zip(x, y):
-            print('Training data')
-            plt.imshow(img[:, :, 0])
-            plt.imshow(lbl, alpha=0.4, cmap='Blues')
-            plt.show()
-
-        sess.run(test_iterator.initializer)
-
-        x, y = sess.run(test_batch)
-        for img, lbl in zip(x, y):
-            print('Test data')
-            plt.imshow(img[:, :, 0])
-            plt.imshow(lbl, alpha=0.4, cmap='Blues')
-            plt.show()
 
 
 
