@@ -7,8 +7,8 @@ This is a tool that extracts the intracranial and corpus callosum area as a biom
 
 The first step is to extract the middle slice from your T2-weighted MRI sequence. For this you will apply the script "Preprocessing.py". This script will extract the middle slice, pre-process and reshape the target slice and make it compatible with the DeepCC model. You have to make sure to fill in your source path (where your MRIs are located) as well as the destination path (where you want the output). Below is an example of the paths:
 
-    image_path = '/Users/yourcomputer/MRI/where_you_have_your_MRI'
-    dest_path_all = '/Users/yourcomputer/output'
+    img_path = '/Users/yourcomputer/MRI/where_you_have_your_MRI'
+    dest_path = '/Users/yourcomputer/output'
 
 After this, we highly recommend you control your data as to make sure that the middle slice actually represents something close to the anatomical middle. Structures that speak for an anatomical middle are: the cerebral aqueduct, fornix, superior/inferior colliculus, a well-defined corpus callosum.
 
@@ -17,19 +17,6 @@ After this, we highly recommend you control your data as to make sure that the m
 
 You are now ready to apply the model on your data. In the file "Main" you will enter the path to where your pre-processed images are. You will also add the path to the two models (corpus callosum and brain). The predictor will combine these two models and output the segmentation along with the normalized corpus callosum value.
 
-One of the first things to do is create a folder for both your Predictor and DataLoader code, as you will call on these in the "Main" file. Below is an example of how the DataLoader exists in a folder called "data_handling" and the Predictor exists in load_model_and_predict inside the folder "train_and_test".
-
-    from DataLoader import DataLoader
-    from load_model_and_predict import Predictor
-
-The DataLoader was used for other aspects, such as training the algorithm. In the predictor object, the DataLoader path is not being called, but nonetheless, a path must be designated:
-
-
-    data_path_b = '/path_to_images_to_be_segmented/*.jpeg'
-    data_path_cc = '/path_to_images_to_be_segmented/*.jpeg'
-
-    dl_b = DataLoader(data_path_b, im_size=(256, 256))
-    dl_c = DataLoader(data_path_cc, im_size=(256, 256))
 
 
 Below is the Predictor. As mentioned above, fill out the path to the images being segmented. Download the two models here: https://ki.box.com/s/r3og7cjrpxqtfd2u185jo9od5wn5rh4i
