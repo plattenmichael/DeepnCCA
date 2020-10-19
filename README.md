@@ -33,6 +33,7 @@ The DataLoader was used for other aspects, such as training the algorithm. In th
 
 
 Below is the Predictor. As mentioned above, fill out the path to the images being segmented. Download the two models here: https://ki.box.com/s/r3og7cjrpxqtfd2u185jo9od5wn5rh4i
+https://ki.box.com/s/o3eanuvv86d1hkyn1axchejbwbhjqd1m
 
 
 Important: place the corpus callosum model before the brain. This will then export an output that is corpus callosum divided by the intracranial area. If you place them in reverse order you will end up with the intracranial area normalized to the corpus callosum.
