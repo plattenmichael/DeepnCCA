@@ -17,7 +17,10 @@ After this, we highly recommend you control your data as to make sure that the m
 
 You are now ready to apply the model on your data. In the file "Main" you will enter the path to where your pre-processed images are. You will also add the path to the two models (corpus callosum and brain). The predictor will combine these two models and output the segmentation along with the normalized corpus callosum value.
 
-One of the first things to do is create a folder for both your Predictor and Dataloader code, as you will call on these in the "Main" file. 
+One of the first things to do is create a folder for both your Predictor and DataLoader code, as you will call on these in the "Main" file. 
+
+    from data_handling.dataloader import DataLoader
+    from train_and_test.load_model_and_predict import Predictor
 
 The DataLoader was used for other aspects, such as training the algorithm. In the predictor object, the DataLoader path is not being called, but nonetheless, a path must be designated:
 
