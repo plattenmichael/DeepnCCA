@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
 
-from data_handling.augmentation import affine_transform, gaussian_noise
 
 
 class DataLoader():
