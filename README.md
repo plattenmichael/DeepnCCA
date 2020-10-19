@@ -22,17 +22,17 @@ One of the first things to do is create a folder for both your Predictor and Dat
 The DataLoader was used for other aspects, such as training the algorithm. In the predictor object, the DataLoader path is not being called, but nonetheless, a path must be designated:
 
 
-data_path_b = '/path_to_images_to_be_segmented/*.jpeg'
-data_path_cc = '/path_to_images_to_be_segmented/*.jpeg'
+    data_path_b = '/path_to_images_to_be_segmented/*.jpeg'
+    data_path_cc = '/path_to_images_to_be_segmented/*.jpeg'
 
-dl_b = DataLoader(data_path_b, im_size=(256, 256))
-dl_c = DataLoader(data_path_cc, im_size=(256, 256))
+    dl_b = DataLoader(data_path_b, im_size=(256, 256))
+    dl_c = DataLoader(data_path_cc, im_size=(256, 256))
 
 
 Below is the Predictor. As mentioned above, fill out the path to the images being segmented. Download the two models here: 
 Important: place the corpus callosum model before the brain. This will then export an output that is corpus callosum divided by the intracranial area. If you place them in reverse order you will end up with the intracranial area normalized to the corpus callosum.
 
 
-prd = Predictor(dl_c, image_path='/path_to_images_to_be_segmented/*.jpeg')
-prd.load_and_predict_both_models(model_paths=['/path_to_the_saved_model_corpus_callosum/model/',
+    prd = Predictor(dl_c, image_path='/path_to_images_to_be_segmented/*.jpeg')
+    prd.load_and_predict_both_models(model_paths=['/path_to_the_saved_model_corpus_callosum/model/',
                                 '/path_to_the_saved_model_brain/model/'])
