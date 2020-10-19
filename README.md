@@ -17,15 +17,11 @@ After this, we highly recommend you control your data as to make sure that the m
 
 You are now ready to apply the model on your data. In the file "Main" you will enter the path to where your pre-processed images are. You will also add the path to the two models (corpus callosum and brain). The predictor will combine these two models and output the segmentation along with the normalized corpus callosum value.
 
+    data_path_b, data_path_cc, image_path = '/path_to_images_to_be_segmented/*.jpeg'
+    model_corpus_callosum = '/path_to_the_saved_model_corpus_callosum/model/'
+    model_brain = '/path_to_the_saved_model_brain/model/'
 
-
-Below is the Predictor. As mentioned above, fill out the path to the images being segmented. Download the two models here: https://ki.box.com/s/r3og7cjrpxqtfd2u185jo9od5wn5rh4i
+Download the two models here: 
+https://ki.box.com/s/r3og7cjrpxqtfd2u185jo9od5wn5rh4i
 https://ki.box.com/s/o3eanuvv86d1hkyn1axchejbwbhjqd1m
 
-
-Important: place the corpus callosum model before the brain. This will then export an output that is corpus callosum divided by the intracranial area. If you place them in reverse order you will end up with the intracranial area normalized to the corpus callosum.
-
-
-    prd = Predictor(dl_c, image_path='/path_to_images_to_be_segmented/*.jpeg')
-    prd.load_and_predict_both_models(model_paths=['/path_to_the_saved_model_corpus_callosum/model/',
-                                '/path_to_the_saved_model_brain/model/'])
