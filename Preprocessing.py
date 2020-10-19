@@ -10,6 +10,8 @@ import errno
 #This file contains a script to convert all .nii files in image_path into one-channel jpeg images and save them in another file
 
 '''
+img_path = '/Users/yourcomputer/MRI/where_you_have_your_MRI/*'
+dest_path = '/Users/yourcomputer/output/'
 
 def translate(value, leftMin, leftMax, rightMin, rightMax):
     # Figure out how 'wide' each range is
@@ -73,8 +75,8 @@ if __name__ == '__main__':
     #image_path = 'This is where you have your T2-weighted images'
     #dest_path_all = 'This is where you want the output'
 
-    image_path = '/Users/yourcomputer/MRI/where_you_have_your_MRI/*'
-    dest_path_all = '/Users/yourcomputer/output/'
+    image_path = img_path
+    dest_path_all = dest_path
 
     image_addrs = glob.glob(image_path)
 
