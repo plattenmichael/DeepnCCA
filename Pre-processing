@@ -73,7 +73,7 @@ if __name__ == '__main__':
     #image_path = 'This is where you have your T2-weighted images'
     #dest_path_all = 'This is where you want the output'
 
-    image_path = '/Users/yourcomputer/desktop/MRI/where_you_have_your_MRI/name_of_your_file*.nii'
+    image_path = '/Users/yourcomputer/desktop/MRI/where_you_have_your_MRI/*'
     dest_path_all = '/Users/yourcomputer/desktop/output/'
 
     image_addrs = glob.glob(image_path)
