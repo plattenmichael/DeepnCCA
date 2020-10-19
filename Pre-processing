@@ -7,7 +7,7 @@ from PIL import Image
 import os
 import errno
 '''
-This file contains a script to convert all .nii files in image_path into one-channel jpeg images and save them in another file
+#This file contains a script to convert all .nii files in image_path into one-channel jpeg images and save them in another file
 
 '''
 
