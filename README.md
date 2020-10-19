@@ -5,7 +5,12 @@ This is a tool that extracts the intracranial and corpus callosum area as a biom
 
 #Pre-processing
 
-The first step is to extract the middle slice from your T2-weighted MRI sequence. For this you will apply the script "convert_nii_to_jpeg_no_label.py". This script will extract the middle slice, pre-process and reshape the target slice and make it compatible with the DeepCC model. You have to make sure to fill in your source path (where your MRIs are located) as well as the destination path (where you want the output). After this, we highly recommend you control your data as to make sure that the middle slice actually represents something close to the anatomical middle. Structures that speak for an anatomical middle are: the cerebral aqueduct, fornix, superior/inferior colliculus, a well-defined corpus callosum.
+The first step is to extract the middle slice from your T2-weighted MRI sequence. For this you will apply the script "convert_nii_to_jpeg_no_label.py". This script will extract the middle slice, pre-process and reshape the target slice and make it compatible with the DeepCC model. You have to make sure to fill in your source path (where your MRIs are located) as well as the destination path (where you want the output). Below is an example of the paths:
+
+    image_path = '/Users/yourcomputer/desktop/MRI/where_you_have_your_MRI'
+    dest_path_all = '/Users/yourcomputer/desktop/output'
+
+After this, we highly recommend you control your data as to make sure that the middle slice actually represents something close to the anatomical middle. Structures that speak for an anatomical middle are: the cerebral aqueduct, fornix, superior/inferior colliculus, a well-defined corpus callosum.
 
 
 #The Model
