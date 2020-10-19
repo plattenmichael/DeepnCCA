@@ -8,7 +8,7 @@ import os
 import errno
 '''
 #This file contains a script to convert all .nii files in image_path into one-channel jpeg images and save them in another file
-
+#The img_path should lead to a folder that contains all your .nii files. 
 '''
 img_path = '/Users/yourcomputer/MRI/where_you_have_your_MRI/*'
 dest_path = '/Users/yourcomputer/output/'
