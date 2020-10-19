@@ -32,7 +32,9 @@ The DataLoader was used for other aspects, such as training the algorithm. In th
     dl_c = DataLoader(data_path_cc, im_size=(256, 256))
 
 
-Below is the Predictor. As mentioned above, fill out the path to the images being segmented. Download the two models here: 
+Below is the Predictor. As mentioned above, fill out the path to the images being segmented. Download the two models here: https://ki.box.com/s/r3og7cjrpxqtfd2u185jo9od5wn5rh4i
+
+
 Important: place the corpus callosum model before the brain. This will then export an output that is corpus callosum divided by the intracranial area. If you place them in reverse order you will end up with the intracranial area normalized to the corpus callosum.
 
 
