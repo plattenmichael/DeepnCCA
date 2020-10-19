@@ -1,6 +1,6 @@
 # Here you have to designate which folder you have downloaded DataLoader and load_model_and_predict to. Our DataLoader was in a folder called "data_handling" and the Predictor was in the "train_and_test" folder.
-from data_handling.dataloader import DataLoader
-from train_and_test.load_model_and_predict import Predictor
+from DataLoader import DataLoader
+from load_model_and_predict import Predictor
 
 
 #Dataloader was also used in the training of the algorithm, and thus had several functions. For predicting with the model, the below pathways are not being called. You can simply use the pathway to where your images are.
