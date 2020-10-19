@@ -5,10 +5,10 @@ This is a tool that extracts the intracranial and corpus callosum area as a biom
 
 #Pre-processing
 
-The first step is to extract the middle slice from your T2-weighted MRI sequence. For this you will apply the script "convert_nii_to_jpeg_no_label.py". This script will extract the middle slice, pre-process and reshape the target slice and make it compatible with the DeepCC model. You have to make sure to fill in your source path (where your MRIs are located) as well as the destination path (where you want the output). Below is an example of the paths:
+The first step is to extract the middle slice from your T2-weighted MRI sequence. For this you will apply the script "Preprocessing.py". This script will extract the middle slice, pre-process and reshape the target slice and make it compatible with the DeepCC model. You have to make sure to fill in your source path (where your MRIs are located) as well as the destination path (where you want the output). Below is an example of the paths:
 
-    image_path = '/Users/yourcomputer/desktop/MRI/where_you_have_your_MRI'
-    dest_path_all = '/Users/yourcomputer/desktop/output'
+    image_path = '/Users/yourcomputer/MRI/where_you_have_your_MRI'
+    dest_path_all = '/Users/yourcomputer/output'
 
 After this, we highly recommend you control your data as to make sure that the middle slice actually represents something close to the anatomical middle. Structures that speak for an anatomical middle are: the cerebral aqueduct, fornix, superior/inferior colliculus, a well-defined corpus callosum.
 
@@ -19,8 +19,8 @@ You are now ready to apply the model on your data. In the file "Main" you will e
 
 One of the first things to do is create a folder for both your Predictor and DataLoader code, as you will call on these in the "Main" file. Below is an example of how the DataLoader exists in a folder called "data_handling" and the Predictor exists in load_model_and_predict inside the folder "train_and_test".
 
-    from data_handling.dataloader import DataLoader
-    from train_and_test.load_model_and_predict import Predictor
+    from DataLoader import DataLoader
+    from load_model_and_predict import Predictor
 
 The DataLoader was used for other aspects, such as training the algorithm. In the predictor object, the DataLoader path is not being called, but nonetheless, a path must be designated:
 
