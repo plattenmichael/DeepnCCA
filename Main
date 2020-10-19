@@ -1,4 +1,4 @@
-# Here you have to designate which folder you have downloaded DataLoader and load_model_and_predict to. Our DataLoader was in a folder called "data_handling" and the Predictor was in the "train_and_test" folder.
+
 from DataLoader import DataLoader
 from load_model_and_predict import Predictor
 
