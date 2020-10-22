@@ -1,5 +1,5 @@
 # DeepCC
-This is a tool that extracts the intracranial and corpus callosum area as a biomarker, normalized corpus callosum, for neurodegeneration in multiple sclerosis.
+This is a tool that extracts the intracranial and corpus callosum area as a biomarker, normalized corpus callosum, for neurodegeneration in multiple sclerosis. If you have any questions or need further support, feel free to contact Michael Platten at: plattenmichael@gmail.com
 
 # Installation
 In the requirements.txt file you will find the versions of the tools used to run the model. It is important that you are using the correct environment, otherwise you may receive errors.
