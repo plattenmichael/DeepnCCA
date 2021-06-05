@@ -30,6 +30,9 @@ You are now ready to apply the model on your data. In the file "Main.py" you wil
 
 
 Download the two models here: 
-https://ki.box.com/s/r3og7cjrpxqtfd2u185jo9od5wn5rh4i
-https://ki.box.com/s/o3eanuvv86d1hkyn1axchejbwbhjqd1m
+
+Both links require the password: corpus
+
+Corpus callosum model: https://owncloud.ki.se/index.php/s/T3gJPPvDMJrTGzX
+Intracranial area model: https://owncloud.ki.se/index.php/s/1JCbG0LmtLdsAT1
 
